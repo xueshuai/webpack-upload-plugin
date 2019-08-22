@@ -4,7 +4,7 @@
  * @Author: Shuai XUE
  * @Date: 2019-08-21 17:46:07
  * @LastEditors: Shuai XUE
- * @LastEditTime: 2019-08-22 18:05:05
+ * @LastEditTime: 2019-08-22 18:10:22
  */
 'use strict'
 
@@ -27,19 +27,6 @@ class EasyUpload {
     this.startTime = null
     this.endTime = null
   }
-
-  // apply(compiler) {
-  //   compiler.plugin('done', compilation => {
-  //     if (!this.options.port) {
-  //       this.options.port = 22
-  //     }
-
-  //     this.startTime = Date.now()
-  //     console.log('\nStart upload, please wait...'.green)
-
-  //     this.upload(this.options.local, this.options)
-  //   })
-  // }
 
   apply(compiler) {
     compiler.hooks.done.tabAsync('EasyUpload', (compilation, callback) => {
