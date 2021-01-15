@@ -4,7 +4,7 @@
  * @Author: Shuai XUE
  * @Date: 2019-08-21 17:46:07
  * @LastEditors: Shuai XUE
- * @LastEditTime: 2019-08-22 18:10:22
+ * @LastEditTime: 2021-01-15 18:36:08
  */
 'use strict'
 
@@ -29,7 +29,7 @@ class EasyUpload {
   }
 
   apply(compiler) {
-    compiler.hooks.done.tabAsync('EasyUpload', (compilation, callback) => {
+    compiler.hooks.done.tapAsync('EasyUpload', (compilation, callback) => {
       callback()
       this.options.handleMode ? this.doUpload() : process.argv.includes('--easy-upload') && this.doUpload()
     })
